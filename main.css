@@ -32,7 +32,7 @@ body {
 
 /* Hamburger Icon */
 .hamburger {
-  display:flex;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
   margin-left: 100px;
@@ -189,12 +189,13 @@ nav {
   }
 }
 
-
 /* introduction section */
 .intro_section {
+  top: 0;
+  position: sticky;
   max-width: max-content;
   margin: auto;
-  background-color: #21212144;
+  background-color: #c0bfbf;
   padding: 30px;
   display: flex;
   align-items: center;
@@ -224,6 +225,9 @@ nav {
 /* About Us Section */
 
 .about_section {
+  height: 100vh;
+  top: 0;
+  position: sticky;
   padding: 30px;
   text-align: center;
   background-color: #fafafa;
@@ -284,9 +288,12 @@ nav {
 /* Mission Section */
 
 .mission_section {
+  height: 100vh;
+  top: 0;
+  position: sticky;
   padding: 30px;
   text-align: center;
-  background-color: #21212144;
+  background-color: #c0bfbf;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
@@ -320,6 +327,9 @@ nav {
 /* Vision Section */
 
 .vision_section {
+  height: 100vh;
+  top: 0;
+  position: sticky;
   padding: 30px;
   text-align: center;
   background-color: #fafafa;
@@ -359,6 +369,24 @@ i {
   font-size: 18px;
 }
 
+/* ********** Panel Section******************* */
+
+.panel1 {
+  z-index: 1;
+}
+.panel2 {
+  z-index: 2;
+}
+.panel3 {
+  z-index: 3;
+}
+.panel4 {
+  z-index: 4;
+}
+.panel5 {
+  z-index: 5;
+}
+
 /* .social a {
     text-decoration: none;
     color: black;
@@ -368,6 +396,9 @@ i {
 /* --------------------------Footer section------------------------ */
 
 .footer_section {
+  height: 100vh;
+  top: 0;
+  position: sticky;
   background: #e4e2d6;
   padding: 10px 20px;
   max-width: 100%;
