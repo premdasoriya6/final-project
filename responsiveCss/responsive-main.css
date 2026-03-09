@@ -1,0 +1,428 @@
+
+
+/* ========== LARGE TABLET (1024px and below) ========== */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav_links {
+    gap: 15px;
+  }
+
+  .nav_links a {
+    font-size: 14px;
+  }
+
+  .login_btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* Intro Section */
+  .intro_section {
+    flex-direction: column;
+    text-align: center;
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .intro_img img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .intro_text h2 {
+    font-size: 35px;
+  }
+
+  .intro_text p {
+    font-size: 18px;
+  }
+
+  /* Keep 3 images per row on tablet */
+  .about_img,
+  .mission_img,
+  .vision_img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .about_img img,
+  .mission_img img,
+  .vision_img img {
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+  }
+
+  /* Hero text */
+  .hero_text {
+    font-size: 55px;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer_left {
+    grid-column: span 2;
+  }
+}
+
+/* ========== TABLET (768px and below) ========== */
+@media (max-width: 768px) {
+
+ /* Show mobile header */
+  .mobile-header {
+    display: flex;
+  }
+
+  /* Hide desktop logo inside nav-container */
+  .desktop-logo {
+    display: none;
+  }
+
+  /* Hide entire nav-container by default */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 300px;
+    background: #4140409c;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 30px 30px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+
+  /* Show menu when active */
+  .nav-container.active {
+    right: 0;
+  }
+
+  /* Navigation Links */
+  .nav_links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .nav_links li {
+    width: 100%;
+  }
+
+  .nav_links a {
+    color: #ffffff;
+    padding: 15px 0;
+    font-size: 16px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+  }
+
+  .nav_links a:hover {
+    color: #080808;
+    padding-left: 10px;
+  }
+
+  /* Login Buttons */
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-buttons .login_btn {
+    width: 100%;
+    text-align: center;
+    color: #080808;
+    background: #e4e2d6;;
+  }
+
+  .nav-buttons .login_btn:hover {
+    background: #484d50;
+    color: aliceblue;
+  }
+
+  /* Overlay when menu is open */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 250px;
+    padding-right: 30px;
+  }
+
+  .hero_text {
+    font-size: 42px;
+  }
+
+  .overlay_shape {
+    width: 75%;
+  }
+
+  /* Intro Section */
+  .intro_section {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 20px;
+    max-width: 95%;
+  }
+
+  .intro_img img {
+    max-width: 500px;
+  }
+
+  .intro_text h2 {
+    font-size: 32px;
+  }
+
+  .intro_text p {
+    font-size: 17px;
+    padding: 0 15px;
+  }
+
+  /* IMPORTANT: Keep 3 columns but make them smaller */
+  .about_img,
+  .mission_img,
+  .vision_img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .about_img img,
+  .mission_img img,
+  .vision_img img {
+    width: calc(33.333% - 15px);
+    min-width: 200px;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  .about_text h2,
+  .mission_text h2,
+  .vision_text h2 {
+    font-size: 32px;
+  }
+
+  .about_text p,
+  .mission_text p,
+  .vision_text p {
+    font-size: 17px;
+    padding: 20px 15px;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer_left {
+    grid-column: span 2;
+    max-width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .social {
+    justify-content: center;
+  }
+}
+
+/* ========== MOBILE (600px and below) ========== */
+@media (max-width: 600px) {
+
+  /* Hero */
+  .hero {
+    height: 220px;
+    padding-right: 20px;
+  }
+
+  .hero_text {
+    font-size: 36px;
+  }
+
+  .overlay_shape {
+    width: 80%;
+  }
+
+  /* Intro */
+  .intro_img img {
+    max-width: 100%;
+  }
+
+  .intro_text h2 {
+    font-size: 28px;
+  }
+
+  .intro_text p {
+    font-size: 16px;
+  }
+
+  /* Images - Still 3 per row but smaller */
+  .about_img img,
+  .mission_img img,
+  .vision_img img {
+    width: calc(33.333% - 10px);
+    min-width: 150px;
+    max-width: 200px;
+  }
+
+  .about_text h2,
+  .mission_text h2,
+  .vision_text h2 {
+    font-size: 28px;
+  }
+
+  .about_text p,
+  .mission_text p,
+  .vision_text p {
+    font-size: 16px;
+    padding: 15px 10px;
+  }
+}
+
+/* ========== SMALL MOBILE (480px and below) ========== */
+@media (max-width: 480px) {
+
+  /* Logo */
+  .logo img {
+    width: 60px;
+  }
+
+  .logo h2 {
+    font-size: 24px;
+  }
+
+  /* Login buttons */
+  .login_btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    height: 200px;
+  }
+
+  .hero_text {
+    font-size: 32px;
+  }
+
+  /* Intro */
+  .intro_text h2 {
+    font-size: 26px;
+  }
+
+  .intro_text p {
+    font-size: 15px;
+  }
+
+  /* Images - 2 per row on very small screens */
+  .about_img,
+  .mission_img,
+  .vision_img {
+    gap: 15px;
+  }
+
+  .about_img img,
+  .mission_img img,
+  .vision_img img {
+    width: calc(50% - 10px);
+    min-width: 140px;
+    max-width: 180px;
+  }
+
+  .about_text h2,
+  .mission_text h2,
+  .vision_text h2 {
+    font-size: 26px;
+  }
+
+  .about_text p,
+  .mission_text p,
+  .vision_text p {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer_left {
+    grid-column: span 1;
+  }
+
+  .footer_copy p {
+    font-size: 14px;
+  }
+}
+
+/* ========== EXTRA SMALL (360px and below) ========== */
+@media (max-width: 360px) {
+
+  .hero_text {
+    font-size: 28px;
+  }
+
+  .intro_text h2 {
+    font-size: 24px;
+  }
+
+  /* Stack images vertically on very small screens */
+  .about_img img,
+  .mission_img img,
+  .vision_img img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .about_text h2,
+  .mission_text h2,
+  .vision_text h2 {
+    font-size: 24px;
+  }
+
+  .about_text p,
+  .mission_text p,
+  .vision_text p {
+    font-size: 14px;
+  }
+}

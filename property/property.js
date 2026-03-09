@@ -1,18 +1,3 @@
-// window.addEventListener("scroll",function()
-// {
-//     const reveals=this.document.querySelectorAll(".reveal");
-
-//     reveals.forEach((el)=>{
-//         const windowHeight =window.innerHeight;
-//         const top=el.getBoundingClientRect().top;
-
-//         if(top<windowHeight-100)
-//         {
-//             el.classList.add("active");
-//         }
-//     });
-// });
-
 const hamburger = document.getElementById('hamburger');
 const navContainer = document.getElementById('navContainer');
 const body = document.body;

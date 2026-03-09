@@ -7,6 +7,7 @@
       <link 
       rel="icon" href="Assests/favicon.ico">
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="responsiveCss/responsive-main.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
@@ -14,26 +15,44 @@
   </head>
   <body>
     <!-- Nav Bar Code -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="Assests/logo-removebg.png" alt="Logo_" />
-        <h2>TrueBrick</h2>
-        <!-- <p >“built on trust, clarity, and local expertise.”</p> -->
-      </div>
+  <nav class="navbar">
+  <!-- Mobile Header (only visible on mobile) -->
+  <div class="mobile-header">
+    <div class="logo-mobile">
+      <img src="Assests/logo-removebg.png" alt="Logo" />
+      <h2>TrueBrick</h2>
+    </div>
+    
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
-      <ul class="nav_links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="#about_section">About Us</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Our Vision</a></li>
-        <li><a href="#">Our Clients</a></li>
-        <li><a href="#">Our Service</a></li>
-      </ul>
-      <div>
-        <a href="#" class="login_btn">Sign-up</a>
-        <a href="log_in.html" class="login_btn">Log-In</a>
-      </div>
-    </nav>
+  <!-- Full Menu (slides in on mobile, always visible on desktop) -->
+  <div class="nav-container" id="navContainer">
+    <div class="logo desktop-logo">
+      <img src="Assests/logo-removebg.png" alt="Logo_" />
+      <h2>TrueBrick</h2>
+    </div>
+
+    <ul class="nav_links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#about_section">About Us</a></li>
+      <li><a href="#">Our Mission</a></li>
+      <li><a href="#">Our Vision</a></li>
+      <li><a href="#">Our Clients</a></li>
+      <li><a href="#">Our Service</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+      <a href="#" class="login_btn">Sign-up</a>
+      <a href="log_in.html" class="login_btn">Log-In</a>
+    </div>
+  </div>
+</nav>
 
     <!-- Header Section -->
     <section class="hero">
@@ -44,7 +63,7 @@
     <!-- Intro Section -->
     <section class="intro_section">
       <div class="intro_img">
-        <img src="Assests\introimg.png" alt="Intro_image" />
+        <img src="Assests/introimg.png" alt="Intro_image" />
       </div>
 
       <div class="intro_text">
@@ -75,9 +94,9 @@
       </div>
 
       <div class="about_img">
-        <img src="Assests\abtimg_1.png" alt="about_img_1" />
-        <img src="Assests\abtimg_2.png" alt="about_img_2" />
-        <img src="Assests\abtimg_3.png" alt="about_img_3" />
+        <img src="Assests/abtimg_1.png" alt="about_img_1" />
+        <img src="Assests/abtimg_2.png" alt="about_img_2" />
+        <img src="Assests/abtimg_3.png" alt="about_img_3" />
       </div>
     </section>
 
@@ -95,9 +114,9 @@
       </div>
 
       <div class="mission_img">
-        <img src="Assests\missionimg_1.png" alt="mission_img_1" />
-        <img src="Assests\missionimg_2.png" alt="mission_img_2" />
-        <img src="Assests\missionimg_3.png" alt="mission_img_3" />
+        <img src="Assests/missionimg_1.png" alt="mission_img_1" />
+        <img src="Assests/missionimg_2.png" alt="mission_img_2" />
+        <img src="Assests/missionimg_3.png" alt="mission_img_3" />
       </div>
     </section>
 
@@ -115,8 +134,8 @@
       </div>
 
       <div class="vision_img">
-        <img src="Assests\visionimg_1.png" alt="vision_img_1" />
-        <img src="Assests\visionimg_3.png" alt="vision_img_2" />
+        <img src="Assests/visionimg_1.png" alt="vision_img_1" />
+        <img src="Assests/visionimg_3.png" alt="vision_img_2" />
         <img src="Assests/visionimg_2.png" alt="vision_img_3" />
       </div>
     </section>

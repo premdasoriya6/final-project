@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-          <link rel="icon" href="/Assests/favicon.ico">
+    <link rel="icon" href="/Assests/favicon.ico" />
 
     <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/responsiveCss/responsive.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -17,20 +18,37 @@
 
   <body>
     <nav class="navbar">
-      <div class="logo">
-        <img src="Assests/logo-removebg.png" alt="Logo_" />
-        <h2>TrueBrick</h2>
-        <!-- <p >“built on trust, clarity, and local expertise.”</p> -->
+      <!-- Mobile Header (only visible on mobile) -->
+      <div class="mobile-header">
+        <div class="logo-mobile">
+          <img src="Assests/logo-removebg.png" alt="Logo" />
+          <h2>TrueBrick</h2>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      <ul class="nav_links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Our Vision</a></li>
-        <li><a href="#">Our Clients</a></li>
-        <li><a href="#">Our Service</a></li>
-      </ul>
+      <!-- Full Menu (slides in on mobile, always visible on desktop) -->
+      <div class="nav-container" id="navContainer">
+        <div class="logo desktop-logo">
+          <img src="Assests/logo-removebg.png" alt="Logo_" />
+          <h2>TrueBrick</h2>
+        </div>
+
+        <ul class="nav_links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#about_section">About Us</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Our Clients</a></li>
+          <li><a href="#">Our Service</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="hero">
@@ -241,6 +259,39 @@
     </section>
 
     <script>
+      const hamburger = document.getElementById("hamburger");
+      const navContainer = document.getElementById("navContainer");
+      const body = document.body;
+
+      // Toggle menu when clicking hamburger
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navContainer.classList.toggle("active");
+        body.classList.toggle("menu-open");
+      });
+
+      // Close menu when clicking on a link
+      const menuLinks = document.querySelectorAll(".nav_links a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navContainer.classList.remove("active");
+          body.classList.remove("menu-open");
+        });
+      });
+
+      // Close menu when clicking outside (on overlay)
+      document.addEventListener("click", (e) => {
+        if (
+          !hamburger.contains(e.target) &&
+          !navContainer.contains(e.target) &&
+          !e.target.closest(".mobile-header")
+        ) {
+          hamburger.classList.remove("active");
+          navContainer.classList.remove("active");
+          body.classList.remove("menu-open");
+        }
+      });
       // Function for emi calculator
 
       function calculateEMI() {

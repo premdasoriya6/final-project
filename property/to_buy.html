@@ -16,19 +16,37 @@
   <body>
     <!-- Nav Bar Code -->
     <nav class="navbar">
-      <div class="logo">
-        <img src="/Assests/logo-removebg.png" alt="Logo_" />
-        <h2>TrueBrick</h2>
+      <!-- Mobile Header (only visible on mobile) -->
+      <div class="mobile-header">
+        <div class="logo-mobile">
+          <img src="/Assests/logo-removebg.png" alt="Logo" />
+          <h2>TrueBrick</h2>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      <ul class="nav_links">
-        <li><a href="/final project/home.html">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Our Vision</a></li>
-        <li><a href="#">Our Clients</a></li>
-        <li><a href="#">Our Service</a></li>
-      </ul>
+      <!-- Full Menu (slides in on mobile, always visible on desktop) -->
+      <div class="nav-container" id="navContainer">
+        <div class="logo desktop-logo">
+          <img src="/Assests/logo-removebg.png" alt="Logo_" />
+          <h2>TrueBrick</h2>
+        </div>
+
+        <ul class="nav_links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#about_section">About Us</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Our Vision</a></li>
+          <li><a href="#">Our Clients</a></li>
+          <li><a href="#">Our Service</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- FIX #5: Typo "buy_conatiner" → "buy_container" -->
@@ -410,6 +428,7 @@
       </section>
     </div>
 
+    <script src="property.js"></script>
     <!-- Map Integration Script -->
     <script>
       var map = L.map("map");
