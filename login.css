@@ -1,0 +1,152 @@
+body{
+  background: url(Assests/login_bg.png) center/cover no-repeat;
+  margin:0;
+  min-height:100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+/* Login Box */
+.login-box{
+  width:100%;
+  max-width:450px;
+  padding:40px;
+  background:#f6f6f7b4;
+  border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.9);
+  text-align:center;
+}
+
+.login-box h1 {
+  color: #000000;
+  font-weight: 600;
+  padding: 10px;
+}
+.login-box img {
+  margin-top: -50px;
+  width: 150px;
+  margin-bottom: -50px;
+}
+.login-box input::placeholder {
+  color: #000000;
+  font-style: italic;
+}
+.login-box form {
+  margin-top: -50px;
+}
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin-top:18px;
+  background:#ffffffa2;
+  border:none;
+  border-radius:5px;
+  box-shadow:0 6px 10px rgba(0,0,0,0.2);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #3f3f3f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-box button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.519);
+  background: #9c9c9c;
+  color: #000000;
+  transition-duration: 0.4s;
+}
+
+/* Forgot */
+.forgot {
+  text-align: right;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.forgot a {
+  color: #00000081;
+  text-decoration: none;
+  font-weight: 500;
+}
+.forgot a:hover {
+  transition-duration: 0.2s;
+  color: #000000;
+}
+
+/* Sign up */
+.sing_up {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.sing_up a {
+  color: #00000081;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sing_up a:hover {
+  transition-duration: 0.2s;
+  color: #000000;
+}
+
+/* ************************* Media Responsive ************* */
+
+@media (max-width:768px){
+
+.login-box{
+  max-width:380px;
+  padding:30px;
+}
+
+.login-box img{
+  width:120px;
+}
+
+.login-box h2{
+  font-size:22px;
+}
+
+}
+
+@media (max-width:480px){
+
+.login-box{
+  max-width:320px;
+  padding:25px;
+}
+
+.login-box img{
+  width:100px;
+}
+
+.login-box input{
+  padding:10px;
+}
+
+.login-box button{
+  padding:10px;
+}
+
+.forgot{
+  font-size:12px;
+}
+
+.sing_up{
+  font-size:12px;
+}
+
+}

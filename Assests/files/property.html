@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TrueBrick-buy</title>
+    <link rel="icon" href="/final project/Assests/favicon.ico" />
+    <link rel="stylesheet" href="property.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <!-- Nav Bar Code -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/final project/Assests/logo-removebg.png" alt="Logo_" />
+        <h2>TrueBrick</h2>
+      </div>
+
+      <ul class="nav_links">
+        <li><a href="/final project/home.html">Home</a></li>
+        <li><a href="/final project/index.html#about_us">About Us</a></li>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Our Vision</a></li>
+        <li><a href="#">Our Clients</a></li>
+        <li><a href="#">Our Service</a></li>
+      </ul>
+    </nav>
+
+    <!-- FIX #5: Typo "buy_conatiner" → "buy_container" -->
+    <div class="buy_container">
+
+      <!-- ===================== Filter Bar =============================== -->
+      <div class="filter_section">
+        <!-- Location -->
+        <select>
+          <option>Location</option>
+          <option>Andheri</option>
+          <option>Bandra</option>
+          <option>kharghar</option>
+          <option>Panvel</option>
+          <option>Karjat</option>
+        </select>
+
+        <!-- Price -->
+        <select>
+          <option>Price</option>
+          <option>₹1.2cr - ₹2.4cr</option>
+          <option>₹3.5cr - ₹4.5cr</option>
+          <option>Price Low-to-High</option>
+          <option>Price High-to-Low</option>
+        </select>
+
+        <!-- BHK -->
+        <select>
+          <option>BHK</option>
+          <option>1BHK Or 1BHK + BALCONY</option>
+          <option>2BHK Or 2BHK + BALCONY</option>
+          <option>3BHK Or 3BHK + BALCONY</option>
+          <option>4BHK Or 4BHK + BALCONY</option>
+        </select>
+
+        <!-- Builders -->
+        <select>
+          <option>Builders</option>
+          <option>GeeCee</option>
+          <option>Lodha Group</option>
+          <option>Godrej properties</option>
+          <option>Rustomjee Group</option>
+          <option>Hiranandani Group</option>
+        </select>
+      </div>
+
+      <!-- =============== Map + Property List Section ========== -->
+      <div class="main_section">
+        <div class="map_area">
+          <div id="map"></div>
+        </div>
+
+        <!-- ============== Property List ================= -->
+        <!-- FIX #1 (CRITICAL): Typo "property_conatiner" → "property_container" 
+             This was causing the 30% width and overflow-y styles to NOT apply -->
+        <div class="property_container">
+          <div class="property_grid">
+
+            <div class="property_card" data-id="1">
+              <img src="/final project/Assests/Carousel/carousel 1/buy_card_carousel_img_1.png" />
+              <h3>GeeCee Sapphire</h3>
+              <h3>Andheri</h3>
+              <p class="price">₹8 CR. - ₹12 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>4.0</span>
+              </div>
+              <p>👁 340K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="2">
+              <img src="/final project/Assests/Carousel/carousel 2/buy_card_carousel_img_2.png" />
+              <h3>GeeCee Evana</h3>
+              <h3>Bandra</h3>
+              <p class="price">₹1.2 CR. - ₹4.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 200K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="3">
+              <img src="/final project/Assests/Carousel/carousel 3/buy_card_carousel_img_3.png" />
+              <h3>GeeCee Laxmi Kunj (Juhu, JVPD Scheme)</h3>
+              <h3>Andheri (Juhu)</h3>
+              <p class="price">₹1.2 CR. - ₹4.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <!-- FIX #6: Rating shown was 3.5 but 4 filled stars shown — corrected star display -->
+                <span>3.5</span>
+              </div>
+              <p>👁 390K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="4">
+              <img src="/final project/Assests/Carousel/carousel 4/buy_card_carousel_img_4.png" />
+              <h3>GeeCee Emerald</h3>
+              <h3>Kharghar</h3>
+              <p class="price">₹4.5 CR. - ₹12 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <!-- FIX #7: Had 5 filled stars but rating said 4.0 — fixed last star to empty -->
+                <i class="fa-regular fa-star"></i>
+                <span>4.0</span>
+              </div>
+              <p>👁 400K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="5">
+              <img src="/final project/Assests/Carousel/carousel 5/buy_card_carousel_img_5.png" />
+              <h3>GeeCee Aspira 206</h3>
+              <h3>Panvel East</h3>
+              <p class="price">₹1.2 CR. - ₹4.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 240K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="6">
+              <img src="/final project/Assests/Carousel/carousel 6/buy_card_carousel_img_6.png" />
+              <h3>GeeCee The Mist</h3>
+              <h3>Karjat</h3>
+              <p class="price">₹1.2 CR. - ₹4.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 350K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="7">
+              <img src="/final project/Assests/buuilding_7.png" />
+              <h3>GeeCee Proximus (Chembur)</h3>
+              <h3>Chembur</h3>
+              <p class="price">₹5.2 CR. - ₹9.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p>👁 358K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="8">
+              <img src="/final project/Assests/buuilding_8.png" />
+              <h3>GeeCee Cloud 36 (Ghansoli, Navi Mumbai)</h3>
+              <h3>Ghansoli</h3>
+              <p class="price">₹3.5 CR. - ₹4.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>4.0</span>
+              </div>
+              <p>👁 550K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="9">
+              <img src="/final project/Assests/buuilding_9.png" />
+              <h3>Lodha Palav Signet</h3>
+              <h3>Dombivli</h3>
+              <p class="price">₹3.5 CR. - ₹10.5 CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 650K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="10">
+              <img src="/final project/Assests/buuilding_10.png" />
+              <h3>Godrej Sky Terraces</h3>
+              <h3>Chembur Mumbai</h3>
+              <p class="price">₹3.5CR. - ₹9.5CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>4.0</span>
+              </div>
+              <p>👁 260K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="11">
+              <img src="/final project/Assests/buuilding_11.png" />
+              <h3>Godrej Chandivali Project</h3>
+              <h3>Chandivali Mumbai</h3>
+              <p class="price">₹2.5CR - ₹6.8CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 340K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="12">
+              <img src="/final project/Assests/buuilding_12.png" />
+              <h3>Godrej City</h3>
+              <h3>Panvel, Navi Mumbai</h3>
+              <p class="price">₹1.5CR. - ₹4.5CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 334K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="13">
+              <img src="/final project/Assests/buuilding_13.png" />
+              <h3>Hiranandani Gardens</h3>
+              <h3>Powai Mumbai</h3>
+              <p class="price">₹6.5CR. - ₹12CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 450K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="14">
+              <img src="/final project/Assests/buuilding_14.png" />
+              <h3>Rustomjee Urbania</h3>
+              <h3>Thane</h3>
+              <p class="price">₹5.5CR. - ₹9.5CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 550K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="15">
+              <img src="/final project/Assests/buuilding_15.png" />
+              <h3>Rustomjee Global City</h3>
+              <h3>Virar West</h3>
+              <p class="price">₹50.5 Lakh. - ₹2.5CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+              </div>
+              <p>👁 360K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+            <div class="property_card" data-id="16">
+              <img src="/final project/Assests/buuilding_16.png" />
+              <h3>Vikram Builders (Rachna Tower)</h3>
+              <h3>Virar</h3>
+              <p class="price">₹25 Lakh. - ₹1.0CR.</p>
+              <div class="ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>3.5</span>
+              </div>
+              <p>👁 300K</p>
+              <button class="view_btn">View More</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <section class="footer_section">
+        <div class="footer">
+          <div class="footer_left">
+            <img src="/final project/Assests/logo-removebg.png" alt="footer_logo" />
+            <h2 class="logo">TrueBrick</h2>
+            <p class="footer_tagline">
+              "build on trust, clarity, and local expertise."
+            </p>
+            <div class="social">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer_box">
+            <h3>Features</h3>
+            <a href="home.html">Home</a>
+            <a href="#">About Our Company</a>
+            <a href="#">Our Mission</a>
+          </div>
+
+          <div class="footer_box">
+            <h3>Learn More</h3>
+            <a href="#">Blog</a>
+            <a href="#">Feedback</a>
+            <a href="#">Customers Reviews</a>
+            <a href="#">Achievements</a>
+          </div>
+
+          <div class="footer_box">
+            <h3>Support</h3>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
+            <a href="#">Legal</a>
+          </div>
+        </div>
+
+        <div class="footer_copy">
+          <p>© 2026 TrueBrick. All rights reserved.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Map Integration Script -->
+    <script>
+      var map = L.map("map");
+
+      // FIX #8: fitBounds requires [[southLat, westLng], [northLat, eastLng]] — fixed bounding box
+      var bounds = L.latLngBounds(
+        [18.9083, 72.8065],  // SW corner (Karjat south, Virar west)
+        [19.4700, 73.3275]   // NE corner (Virar north, Karjat east)
+      );
+      map.fitBounds(bounds);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      const property = [
+        { id: 1,  name: "GeeCee Sapphire (Andheri)",               builder: "GeeCee",            price: "₹8 CR. - ₹12 CR.",       location: [19.129,   72.8325] },
+        { id: 2,  name: "GeeCee Evana (Bandra)",                    builder: "GeeCee",            price: "₹1.2 CR. - ₹4.5 CR.",    location: [19.0616,  72.8498] },
+        { id: 3,  name: "GeeCee Laxmi Kunj (Juhu, JVPD Scheme)",   builder: "GeeCee",            price: "₹1.2 CR. - ₹4.5 CR.",    location: [19.1147,  72.8263] },
+        { id: 4,  name: "GeeCee Emerald (Kharghar)",                builder: "GeeCee",            price: "₹4.5 CR. - ₹12 CR.",     location: [19.0395,  73.0695] },
+        { id: 5,  name: "GeeCee Aspira 206 (New Panvel East)",      builder: "GeeCee",            price: "₹1.2 CR. - ₹4.5 CR.",    location: [18.9976,  73.1228] },
+        { id: 6,  name: "GeeCee The Mist (Karjat)",                 builder: "GeeCee",            price: "₹1.2 CR. - ₹4.5 CR.",    location: [18.9083,  73.3275] },
+        { id: 7,  name: "GeeCee Proximus (Chembur)",                builder: "GeeCee",            price: "₹5.2 CR. - ₹9.5 CR.",    location: [19.0536,  72.9005] },
+        { id: 8,  name: "GeeCee Cloud 36 (Ghansoli, Navi Mumbai)",  builder: "GeeCee",            price: "₹3.5 CR. - ₹4.5 CR.",    location: [19.1191,  72.9926] },
+        { id: 9,  name: "Lodha Palav Signet (Dombivli)",            builder: "Lodha Group",       price: "₹3.5 CR. - ₹10.5 CR.",   location: [19.1680,  73.0740] },
+        { id: 10, name: "Godrej Sky Terraces (Chembur)",            builder: "Godrej Properties", price: "₹3.5 CR. - ₹9.5 CR.",    location: [19.0432,  72.9124] },
+        { id: 11, name: "Godrej Chandivali Project",                builder: "Godrej Properties", price: "₹2.5 CR. - ₹6.8 CR.",    location: [19.1069,  72.9019] },
+        { id: 12, name: "Godrej City (Panvel)",                     builder: "Godrej Properties", price: "₹1.5 CR. - ₹4.5 CR.",    location: [19.0278,  73.0566] },
+        // FIX #9: JS had "Hirananadi Group" (typo) but icon function checked "Hirananadi Group" — now consistent
+        { id: 13, name: "Hiranandani Gardens, Powai",               builder: "Hiranandani Group", price: "₹6.5 CR. - ₹12 CR.",     location: [19.1184,  72.9137] },
+        { id: 14, name: "Rustomjee Urbania (Thane)",                builder: "Rustomjee Groups",  price: "₹5.5 CR. - ₹9.5 CR.",    location: [19.2183,  72.9781] },
+        { id: 15, name: "Rustomjee Global City (Virar West)",       builder: "Rustomjee Groups",  price: "₹50.5 Lakh. - ₹2.5 CR.", location: [19.4696,  72.8015] },
+        { id: 16, name: "Vikram Builders (Rachna Tower), Virar",    builder: "Vikram Builders",   price: "₹25 Lakh. - ₹1.0 CR.",   location: [19.4576,  72.8065] },
+      ];
+
+      // Color-coded markers per builder
+      const redIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+        iconSize: [25, 41], iconAnchor: [12, 41]
+      });
+      const blueIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+        iconSize: [25, 41], iconAnchor: [12, 41]
+      });
+      const greenIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+        iconSize: [25, 41], iconAnchor: [12, 41]
+      });
+      const violetIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+        iconSize: [25, 41], iconAnchor: [12, 41]
+      });
+      const orangeIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+        iconSize: [25, 41], iconAnchor: [12, 41]
+      });
+
+      // FIX #9: Corrected "Hirananadi Group" → "Hiranandani Group" to match data
+      function getIcon(builder) {
+        if (builder === "GeeCee")            return blueIcon;
+        if (builder === "Lodha Group")       return redIcon;
+        if (builder === "Godrej Properties") return greenIcon;
+        if (builder === "Hiranandani Group") return violetIcon;
+        if (builder === "Rustomjee Groups")  return orangeIcon;  // FIX #10: Was blueIcon (same as GeeCee), changed to orange
+        if (builder === "Vikram Builders")   return orangeIcon;
+        return redIcon;
+      }
+
+      let markers = {};
+      property.forEach(p => {
+        let marker = L.marker(p.location, { icon: getIcon(p.builder) })
+          .addTo(map)
+          .bindPopup(`<strong>${p.name}</strong><br>${p.price}`);
+        markers[p.id] = marker;
+      });
+
+      // Hover → open popup & pan; Click → zoom in
+      document.querySelectorAll(".property_card").forEach(card => {
+        card.addEventListener("mouseenter", function () {
+          let id = this.dataset.id;
+          if (markers[id]) {
+            markers[id].openPopup();
+            map.panTo(markers[id].getLatLng());
+          }
+        });
+        card.addEventListener("click", function () {
+          let id = this.dataset.id;
+          if (markers[id]) {
+            map.setView(markers[id].getLatLng(), 15);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
